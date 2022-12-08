@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Vanilla Weather APP</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="weather-app">
+          <img
+            src="https://www.weather.shecodes.io/images/logo.png"
+            alt="logo"
+            width="150px"
+          />
+          <form id="search-form" class="search-form">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city..."
+                  id="city-input"
+                  class="form-control search-input"
+                  autofocus="off"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3 p-0">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-primary"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="weatherInfo">
+            <div class="row">
+              <div class="col-6">
+                <h1 id="city">Paris</h1>
+                <ul>
+                  <li>
+                    <span class="date" id="date">Wednesday 11:06</span>,
+                    <span class="description" id="description">light rain</span>
+                  </li>
+                  <li>
+                    Humidity: <span class="humidity" id="humidity">89</span>%,
+                    Wind: <span class="wind" id="wind">1</span> km/h
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 today-temp">
+                <img
+                  id="icon-today"
+                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                  alt=""
+                />
+                <span class="temp-show">
+                  <span class="temperature" id="temperature">7</span>
+                  <span class="unit" id="celsus">°C</span>
+                  <span class="unit"> | </span>
+                  <span class="unit" id="fahrenheit">°F</span>
+                </span>
+              </div>
+            </div>
+            <div class="forecast-weather">
+              <div class="row forecast-day">
+                <div class="col">Wed</div>
+                <div class="col">Thu</div>
+                <div class="col">Fri</div>
+                <div class="col">Sat</div>
+                <div class="col">Sun</div>
+              </div>
+              <div class="row forecast-icon">
+                <div class="col">
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="cloudy"
+                  />
+                </div>
+                <div class="col">
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="cloudy"
+                  />
+                </div>
+                <div class="col">
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="cloudy"
+                  />
+                </div>
+                <div class="col">
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="cloudy"
+                  />
+                </div>
+                <div class="col">
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="cloudy"
+                  />
+                </div>
+              </div>
+              <div class="row forecast-temp">
+                <div class="col">
+                  <span class="temp-max">2°</span
+                  ><span class="temp-min">5°</span>
+                </div>
+                <div class="col">
+                  <span class="temp-max">2°</span
+                  ><span class="temp-min">5°</span>
+                </div>
+                <div class="col">
+                  <span class="temp-max">2°</span
+                  ><span class="temp-min">5°</span>
+                </div>
+                <div class="col">
+                  <span class="temp-max">2°</span
+                  ><span class="temp-min">5°</span>
+                </div>
+                <div class="col">
+                  <span class="temp-max">2°</span
+                  ><span class="temp-min">5°</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          This project was coded by Yixuan Zhao and is
+          <a href="https://github.com/yixuan-zhao/vanilla-weather-search"
+            >open-sourced</a
+          >
+          on GitHub and hosted on
+          <a
+            href="https://63773d1bb6f19b17c6951caa--serene-toffee-7503e9.netlify.app/"
+            >Netlify</a
+          >
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(249, 247, 254);
+}
+
+h1 {
+  color: #272142;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 20px 0 10px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+img {
+  width: 52;
+  height: 52;
+}
+
+.wrapper {
+  background-color: #fff;
+  margin: 60px auto;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 30px 50px rgb(65, 50, 100 / 8%);
+  max-width: 780px;
+}
+
+.search-form {
+  border-bottom: 1px solid #f9f7fe;
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+.search-input {
+  background: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  color: rgba(39, 33, 66, 0.4);
+  display: inline-block;
+  font-size: 16px;
+  height: 50px;
+  line-height: 20px;
+  padding: 15px 20px;
+}
+
+.btn {
+  background: #885df1;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  height: 50px;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.humidity,
+.wind {
+  color: #f65282;
+  font-weight: 400;
+}
+
+.today-temp {
+  text-align: right;
+}
+
+.temp-show {
+  position: relative;
+  top: 30px;
+}
+
+.temperature {
+  color: #272142;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 10px;
+}
+
+.unit {
+  color: #212121;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  position: relative;
+  top: -34px;
+}
+
+.forecast-day {
+  margin-top: 30px;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.forecast-temp {
+  text-align: center;
+}
+
+.temp-max {
+  color: #f65282;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.temp-min {
+  color: #f65282;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-left: 10px;
+  opacity: 0.6;
+}
+
+.weatherInfo {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #f9f7fe;
+}
+
+.footer {
+  margin-top: 40px;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.description{
+  text-transform: capitalize;
+}
