@@ -140,6 +140,13 @@ img {
   text-align: center;
 }
 
-.description{
+.description {
   text-transform: capitalize;
+}
+
+.forecast-icon img {
+  width: 90px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
