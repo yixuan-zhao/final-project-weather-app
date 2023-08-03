@@ -23,19 +23,13 @@ function formatDate(timestamp) {
 
 function displayForecast(forecast) {
   let forecastDaysElement = document.querySelector("#forecast-days");
-  let forecastIconsElement = document.querySelector("#forecast-icons");
-  let forecastTemperaturesElement = document.querySelector(
-    "#forecast-temperatures"
-  );
 
   let forecastDaysHTML = "";
-  let forecastIconsHTML = "";
-  let forecastTemperaturesHTML = "";
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  forecast.slice(1, 6).forEach(function (dayForecast) {
-    forecastDaysHTML += `<div class="col">${formatDate(
-      dayForecast.dt * 1000
-    )}</div>`;
+  forecast.slice(1, 6).forEach(function (dayForecast, index) {
+    let day = days[new Date(dayForecast.dt * 1000).getDay()];
+    forecastDaysHTML += `<div class="col">${day}</div>`;
     forecastIconsHTML += `<div class="col">
       <img src="http://openweathermap.org/img/wn/${dayForecast.weather[0].icon}@2x.png" alt="" />
     </div>`;
@@ -46,8 +40,6 @@ function displayForecast(forecast) {
   });
 
   forecastDaysElement.innerHTML = forecastDaysHTML;
-  forecastIconsElement.innerHTML = forecastIconsHTML;
-  forecastTemperaturesElement.innerHTML = forecastTemperaturesHTML;
 }
 
 function displayTemperature(response) {
@@ -117,5 +109,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-searchCity("Paris");
 displayForecast();

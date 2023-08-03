@@ -98,12 +98,29 @@ img {
   text-decoration: none;
 }
 
-.forecast-day {
+.forecast-day,
+.forecast-info {
   margin-top: 30px;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   line-height: 20px;
   text-align: center;
+}
+
+.forecast-day .col,
+.forecast-info .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast-info .col img {
+  margin-bottom: 5px;
+}
+
+.forecast-info .col .weather-forecast-temperatures {
+  display: flex;
+  align-items: center;
 }
 
 .forecast-temp {
