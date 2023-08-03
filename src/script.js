@@ -22,32 +22,32 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(forecast) {
-  let forecastElement = document.querySelector("#forecast");
+  let forecastDaysElement = document.querySelector("#forecast-days");
+  let forecastIconsElement = document.querySelector("#forecast-icons");
+  let forecastTemperaturesElement = document.querySelector(
+    "#forecast-temperatures"
+  );
 
-  let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (dayForecast) {
-    forecastHTML += `
-      <div class="col-2">
-        <div class="weather-forecast-date">${formatDate(
-          dayForecast.dt * 1000
-        )}</div>
-        <img src="http://openweathermap.org/img/wn/${
-          dayForecast.weather[0].icon
-        }@2x.png" alt="" width="42" />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max">${Math.round(
-            dayForecast.temp.max
-          )}°</span>
-          <span class="weather-forecast-temperature-min">${Math.round(
-            dayForecast.temp.min
-          )}°</span>
-        </div>
-      </div>
-  `;
+  let forecastDaysHTML = "";
+  let forecastIconsHTML = "";
+  let forecastTemperaturesHTML = "";
+
+  forecast.slice(1, 6).forEach(function (dayForecast) {
+    forecastDaysHTML += `<div class="col">${formatDate(
+      dayForecast.dt * 1000
+    )}</div>`;
+    forecastIconsHTML += `<div class="col">
+      <img src="http://openweathermap.org/img/wn/${dayForecast.weather[0].icon}@2x.png" alt="" />
+    </div>`;
+    forecastTemperaturesHTML += `<div class="col">
+      <span class="temp-max">${Math.round(dayForecast.temp.max)}°</span>
+      <span class="temp-min">${Math.round(dayForecast.temp.min)}°</span>
+    </div>`;
   });
 
-  forecastHTML += `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  forecastDaysElement.innerHTML = forecastDaysHTML;
+  forecastIconsElement.innerHTML = forecastIconsHTML;
+  forecastTemperaturesElement.innerHTML = forecastTemperaturesHTML;
 }
 
 function displayTemperature(response) {
@@ -95,11 +95,9 @@ function handleSubmit(event) {
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
-  // celsiusLink.classList.remove("active");
-  // fahrenheitLink.classList.add("active");
-  let celsiusTemperature = documnet.querySelector("#temperature");
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  let celsiusTemperature = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemperature.innerHTML * 9) / 5 + 32; // Fix the typo "documnet" to "document"
+  celsiusTemperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function displayCelsiusTemperature(event) {
