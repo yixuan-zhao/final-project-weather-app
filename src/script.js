@@ -1,14 +1,6 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[date.getDay()];
   let hours = date.getHours();
   if (hours < 10) {
@@ -30,15 +22,15 @@ function displayForecast(forecast) {
   let forecastDaysHTML = "";
   let forecastIconsTemperaturesHTML = "";
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  forecast.slice(1, 6).forEach(function (dayForecast) {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  forecast.daily.slice(1, 6).forEach(function (dayForecast) {
     let day = days[new Date(dayForecast.dt * 1000).getDay()];
     forecastDaysHTML += `<div class="col">${day}</div>`;
 
     forecastIconsTemperaturesHTML += `<div class="col">
       <img src="http://openweathermap.org/img/wn/${
         dayForecast.weather[0].icon
-      }@2x.png" alt="" />
+      }.png" alt="" />
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">${Math.round(
           dayForecast.temp.max
