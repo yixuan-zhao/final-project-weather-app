@@ -23,23 +23,35 @@ function formatDate(timestamp) {
 
 function displayForecast(forecast) {
   let forecastDaysElement = document.querySelector("#forecast-days");
+  let forecastIconsTemperaturesElement = document.querySelector(
+    "#forecast-icons-temperatures"
+  );
 
   let forecastDaysHTML = "";
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastIconsTemperaturesHTML = "";
 
-  forecast.slice(1, 6).forEach(function (dayForecast, index) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  forecast.slice(1, 6).forEach(function (dayForecast) {
     let day = days[new Date(dayForecast.dt * 1000).getDay()];
     forecastDaysHTML += `<div class="col">${day}</div>`;
-    forecastIconsHTML += `<div class="col">
-      <img src="http://openweathermap.org/img/wn/${dayForecast.weather[0].icon}@2x.png" alt="" />
-    </div>`;
-    forecastTemperaturesHTML += `<div class="col">
-      <span class="temp-max">${Math.round(dayForecast.temp.max)}°</span>
-      <span class="temp-min">${Math.round(dayForecast.temp.min)}°</span>
+
+    forecastIconsTemperaturesHTML += `<div class="col">
+      <img src="http://openweathermap.org/img/wn/${
+        dayForecast.weather[0].icon
+      }@2x.png" alt="" />
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature-max">${Math.round(
+          dayForecast.temp.max
+        )}°</span>
+        <span class="weather-forecast-temperature-min">${Math.round(
+          dayForecast.temp.min
+        )}°</span>
+      </div>
     </div>`;
   });
 
   forecastDaysElement.innerHTML = forecastDaysHTML;
+  forecastIconsTemperaturesElement.innerHTML = forecastIconsTemperaturesHTML;
 }
 
 function displayTemperature(response) {
