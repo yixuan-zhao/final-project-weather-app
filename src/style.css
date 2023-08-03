@@ -95,7 +95,6 @@ img {
   line-height: 1;
   position: relative;
   top: -34px;
-  text-decoration: none;
 }
 
 .forecast-day {
@@ -141,6 +140,6 @@ img {
   text-align: center;
 }
 
-.description {
+.description{
   text-transform: capitalize;
 }
