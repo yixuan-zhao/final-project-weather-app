@@ -96,10 +96,8 @@ function displayFahrenheitTemp(event) {
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-  // celsiusLink.classList.add("active");
-  // fahrenheitLink.classList.remove("active");
   let celsiusTemperature = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusTemperature.innerHTML = Math.round(celsiusTemperature.innerHTML);
 }
 
 let searchForm = document.querySelector("#search-form");
