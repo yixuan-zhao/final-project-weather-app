@@ -79,6 +79,20 @@ function displayTemperature(response) {
   axios.get(apiUrl).then(function (response) {
     displayForecast(response);
   });
+
+  let celsiusTemperature = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = celsiusTemperature;
+
+  let fahrenheitLink = document.querySelector("#fahrenheit");
+  fahrenheitLink.addEventListener("click", function () {
+    let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+    temperatureElement.innerHTML = fahrenheitTemperature;
+  });
+
+  let celsiusLink = document.querySelector("#celsius");
+  celsiusLink.addEventListener("click", function () {
+    temperatureElement.innerHTML = celsiusTemperature;
+  });
 }
 
 function searchCity(city) {
